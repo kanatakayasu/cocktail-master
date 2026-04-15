@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  /* FRESCO inspired palette */
+  --color-bar-dark: #0d1a12;
+  --color-bar-green: #1b3022;
+  --color-bar-green-light: #2a4a35;
+  --color-accent-red: #bb2121;
+  --color-accent-gold: #c9a96e;
+  --color-accent-cream: #e8dcc8;
+  --color-glass-white: rgba(255, 255, 255, 0.08);
+  --color-glass-border: rgba(255, 255, 255, 0.15);
+  --color-text-primary: #f5f0e8;
+  --color-text-secondary: rgba(245, 240, 232, 0.6);
+  --color-text-muted: rgba(245, 240, 232, 0.4);
+
+  /* Legacy aliases — keeps old Tailwind class references working */
+  --color-bar-navy: #1b3022;
+  --color-bar-purple: #2a4a35;
+  --color-neon-pink: #bb2121;
+  --color-neon-blue: #c9a96e;
+  --color-neon-green: #e8dcc8;
+  --color-neon-gold: #c9a96e;
+  --color-neon-orange: #c9a96e;
+
+  --font-family-serif: 'Noto Serif JP', serif;
+  --font-family-display: 'Cinzel', serif;
+  --font-family-accent: 'Cormorant Garamond', serif;
+}
+
+/* ガラスモーフィズム効果 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ゴールドグロー効果（ネオンから置換） */
+.neon-glow,
+.gold-glow {
+  text-shadow: 0 0 20px rgba(201, 169, 110, 0.3);
+}
+
+.neon-border {
+  box-shadow: 0 0 4px rgba(201, 169, 110, 0.2), inset 0 0 4px rgba(201, 169, 110, 0.1);
+}
+
+/* グラデーションテキスト — ゴールド系 */
+.gradient-text {
+  background: linear-gradient(135deg, #c9a96e, #e8dcc8, #c9a96e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* L字コーナーボーダーのホバー効果 */
+.corner-hover {
+  position: relative;
+}
+.corner-hover::before,
+.corner-hover::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.corner-hover::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid #c9a96e;
+  border-left: 1px solid #c9a96e;
+}
+.corner-hover::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid #c9a96e;
+  border-right: 1px solid #c9a96e;
+}
+.corner-hover:hover::before,
+.corner-hover:hover::after {
+  opacity: 1;
+}
+
+/* スクロールバースタイル */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1a12;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a96e;
+  border-radius: 3px;
+}
+
+/* 微細な光の粒子アニメーション */
+@keyframes particle-float {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 0.4; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+.particle {
+  animation: particle-float var(--duration, 12s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* 旧 bubble クラスも particle にリマップ */
+.bubble {
+  animation: particle-float var(--duration, 12s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* ベースリセット */
+body {
+  margin: 0;
+  background: #0d1a12;
+  color: #f5f0e8;
+  font-family: 'Noto Serif JP', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
