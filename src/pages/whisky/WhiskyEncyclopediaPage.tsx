@@ -126,7 +126,7 @@ const DRINKING_METHODS = [
     nameEn: 'Straight / Neat',
     description: 'ウイスキーそのままを常温で味わう飲み方。ウイスキー本来の風味を最も直接的に感じられる。テイスティンググラス（グレンケアン）を使用すると香りが集まりやすい。チェイサー（水）を用意するのがマナー。',
     ratio: 'ウイスキーのみ',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Glencairn_Glass-pjt.jpg/800px-Glencairn_Glass-pjt.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Glencairn_whisky_glass_and_lights.jpg/800px-Glencairn_whisky_glass_and_lights.jpg',
   },
   {
     emoji: '🧊',
@@ -134,7 +134,7 @@ const DRINKING_METHODS = [
     nameEn: 'On the Rocks',
     description: 'ロックグラスに大きめの氷を入れ、ウイスキーを注ぐ。温度変化とともに風味が変わる楽しみがある。氷が溶けるにつれて加水効果も加わり、時間経過での味の変化を楽しめる。',
     ratio: 'ウイスキー＋氷',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/A_Glass_of_Whiskey_on_the_Rocks.jpg/800px-A_Glass_of_Whiskey_on_the_Rocks.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Whiskey_with_spherical_ice.jpg',
   },
   {
     emoji: '💧',
@@ -142,7 +142,7 @@ const DRINKING_METHODS = [
     nameEn: 'Twice Up',
     description: 'ウイスキーと常温の水を1:1で混ぜる飲み方。アルコール度数が20〜30度になり、最も香りが引き立つとされる。ブレンダーがテイスティングする際にもよく用いられるプロフェッショナルな手法。',
     ratio: 'ウイスキー 1 : 水 1',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Glass_of_whisky.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Glencairn_Glasses_and_Water_Jug.jpg/800px-Glencairn_Glasses_and_Water_Jug.jpg',
   },
   {
     emoji: '🚰',
@@ -150,7 +150,7 @@ const DRINKING_METHODS = [
     nameEn: 'Mizuwari',
     description: '日本発祥の飲み方。グラスに氷を入れ、ウイスキーと冷水を1:2〜3の比率で混ぜる。食事と合わせやすい濃度になるのが特徴で、日本の食文化に合った飲み方として世界的にも認知されている。',
     ratio: 'ウイスキー 1 : 水 2〜3',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Nosing_Glass_f%C3%BCr_Whisky.JPG/800px-Nosing_Glass_f%C3%BCr_Whisky.JPG',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/64/1977_NatsumeGataMizuwariSet_Masahiro-Mori.jpg',
   },
   {
     emoji: '🫧',
@@ -158,7 +158,7 @@ const DRINKING_METHODS = [
     nameEn: 'Highball',
     description: 'ウイスキーをソーダ水（炭酸水）で割る飲み方。爽やかで飲みやすく、食中酒としても最適。日本ではサントリーの「角ハイボール」キャンペーン（2008年〜）で大ブームとなり、ウイスキー市場を復活させた。',
     ratio: 'ウイスキー 1 : ソーダ 3〜4',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Torys_Highball_at_Ebisu%2C_Nishiogikubo_south_%2829740423022%29.jpg/800px-Torys_Highball_at_Ebisu%2C_Nishiogikubo_south_%2829740423022%29.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Highball%2C_bar%2C_Golden_Gai%2C_Shinkjuku%2C_Tokyo%2C_Japan_in_2024.jpg/800px-Highball%2C_bar%2C_Golden_Gai%2C_Shinkjuku%2C_Tokyo%2C_Japan_in_2024.jpg',
   },
   {
     emoji: '🥂',
@@ -166,7 +166,7 @@ const DRINKING_METHODS = [
     nameEn: 'Half Rock',
     description: 'ロックグラスに氷を入れ、ウイスキーと水を1:1で注ぐ飲み方。トワイスアップの氷入り版とも言える。オン・ザ・ロックより柔らかく、水割りより濃い、バランスの良い飲み方。',
     ratio: 'ウイスキー 1 : 水 1 ＋氷',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/A_Glass_of_Whiskey_on_the_Rocks.jpg/800px-A_Glass_of_Whiskey_on_the_Rocks.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Glass_of_Scotch_and_soda.jpg/800px-Glass_of_Scotch_and_soda.jpg',
   },
 ];
 
@@ -686,7 +686,7 @@ function DrinkingTab() {
         <p className="text-sm text-gray-400 leading-relaxed mb-4">
           ウイスキーベースの代表的なカクテルです。検定ではカクテル名・ベースの種類・技法（ステア/シェイク/ビルド）が出題されます。
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {WHISKY_COCKTAILS.map((cocktail) => (
             <motion.div
               key={cocktail.name}
