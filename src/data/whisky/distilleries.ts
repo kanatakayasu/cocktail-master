@@ -395,6 +395,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['1919年免許取得', '日本酒蔵併設', 'あかしブランド'],
     color: '#D2691E',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Eigashima_Shuzo_Akashi01s3.jpg/960px-Eigashima_Shuzo_Akashi01s3.jpg',
   },
   // ===== アメリカ =====
   {
@@ -577,6 +578,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['クラウンローヤルの製造元', '王家のウイスキー', 'ウィニペグ湖畔'],
     color: '#4B0082',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/CR_Gimli.jpg/960px-CR_Gimli.jpg',
   },
   {
     id: 'alberta',
