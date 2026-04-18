@@ -1,7 +1,7 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Crosshair, Shuffle, Star, Play, ArrowLeft } from 'lucide-react';
+import { Crosshair, Shuffle, ArrowLeft, Search, X } from 'lucide-react';
 import { cocktails } from '../../data';
 import { gameRecipes } from '../../data/gameRecipes';
 import type { GameMode, GameProgress } from '../../types/game';
@@ -30,6 +30,49 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' as const } },
 };
 
+const BASE_FILTERS = [
+  { key: 'all', label: '全て' },
+  { key: 'gin', label: 'ジン' },
+  { key: 'vodka', label: 'ウォッカ' },
+  { key: 'rum', label: 'ラム' },
+  { key: 'tequila', label: 'テキーラ' },
+  { key: 'whisky', label: 'ウイスキー' },
+  { key: 'brandy', label: 'ブランデー' },
+  { key: 'other', label: 'その他' },
+] as const;
+
+const TECHNIQUE_FILTERS = [
+  { key: 'all', label: '全て' },
+  { key: 'build', label: 'ビルド' },
+  { key: 'stir', label: 'ステア' },
+  { key: 'shake', label: 'シェイク' },
+  { key: 'blend', label: 'ブレンド' },
+] as const;
+
+const TASTE_FILTERS = [
+  { key: 'all', label: '全て' },
+  { key: 'sweet', label: '甘口' },
+  { key: 'dry', label: '辛口' },
+  { key: 'sour', label: '酸味' },
+  { key: 'bitter', label: '苦味' },
+  { key: 'balanced', label: 'バランス' },
+] as const;
+
+function FilterPill({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`px-3 py-1 rounded text-xs sm:text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
+        active
+          ? 'bg-accent-gold/15 text-accent-gold border border-accent-gold/40'
+          : 'bg-white/5 text-text-secondary border border-white/10 hover:bg-white/10 hover:text-text-primary'
+      }`}
+    >
+      {label}
+    </button>
+  );
+}
+
 const STORAGE_KEY = 'cocktail-game-progress';
 
 function loadProgress(): GameProgress {
@@ -51,21 +94,14 @@ function ShakerIcon({ size = 48 }: { size?: number }) {
   );
 }
 
-function DifficultyStars({ level }: { level: number }) {
-  return (
-    <span className="inline-flex gap-0.5">
-      {[1, 2, 3].map((i) => (
-        <Star key={i} size={14} className={i <= level ? 'text-accent-gold fill-accent-gold' : 'text-text-muted'} />
-      ))}
-    </span>
-  );
-}
-
 export default function GameTopPage() {
   const navigate = useNavigate();
   const [selectedMode, setSelectedMode] = useState<GameMode | null>(null);
-  const [selectedCocktailId, setSelectedCocktailId] = useState<string | null>(null);
   const [progress, setProgress] = useState<GameProgress>(loadProgress);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [baseFilter, setBaseFilter] = useState('all');
+  const [techniqueFilter, setTechniqueFilter] = useState('all');
+  const [tasteFilter, setTasteFilter] = useState('all');
 
   useEffect(() => {
     const onFocus = () => setProgress(loadProgress());
@@ -82,6 +118,22 @@ export default function GameTopPage() {
     return cocktails.filter((c) => recipeMap.has(c.id));
   }, [recipeMap]);
 
+  const filteredCocktails = useMemo(() => {
+    return availableCocktails.filter((c) => {
+      if (searchQuery && !c.name.includes(searchQuery) && !c.nameEn.toLowerCase().includes(searchQuery.toLowerCase())) {
+        return false;
+      }
+      if (baseFilter !== 'all') {
+        if (baseFilter === 'other') {
+          if (['gin', 'vodka', 'rum', 'tequila', 'whisky', 'brandy'].includes(c.baseCategory)) return false;
+        } else if (c.baseCategory !== baseFilter) return false;
+      }
+      if (techniqueFilter !== 'all' && c.technique !== techniqueFilter) return false;
+      if (tasteFilter !== 'all' && c.taste !== tasteFilter) return false;
+      return true;
+    });
+  }, [availableCocktails, searchQuery, baseFilter, techniqueFilter, tasteFilter]);
+
   const handleModeSelect = (mode: GameMode) => {
     if (mode === 'random') {
       // ランダムモード: 即座にランダムなカクテルで開始
@@ -93,15 +145,9 @@ export default function GameTopPage() {
     }
     // カクテル指定モード
     setSelectedMode(mode);
-    setSelectedCocktailId(null);
   };
 
-  const handleStart = () => {
-    if (!selectedCocktailId) return;
-    navigate(`/game/play?mode=select&cocktail=${selectedCocktailId}`);
-  };
-
-  return (
+return (
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Back nav */}
@@ -212,28 +258,78 @@ export default function GameTopPage() {
                 カクテルを選択
               </h2>
 
+              {/* 検索バー */}
+              <div className="relative max-w-md mb-4">
+                <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
+                <input
+                  type="text"
+                  placeholder="カクテル名で検索..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-10 py-2.5 rounded bg-white/5 border border-white/10 text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-gold/50 transition-colors"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 cursor-pointer"
+                  >
+                    <X size={16} />
+                  </button>
+                )}
+              </div>
+
+              {/* フィルター群 */}
+              <div className="space-y-3 mb-4">
+                <div>
+                  <span className="text-xs font-medium text-gray-500 mb-1.5 block">ベース</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {BASE_FILTERS.map((f) => (
+                      <FilterPill key={f.key} label={f.label} active={baseFilter === f.key} onClick={() => setBaseFilter(f.key)} />
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <span className="text-xs font-medium text-gray-500 mb-1.5 block">技法</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {TECHNIQUE_FILTERS.map((f) => (
+                      <FilterPill key={f.key} label={f.label} active={techniqueFilter === f.key} onClick={() => setTechniqueFilter(f.key)} />
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <span className="text-xs font-medium text-gray-500 mb-1.5 block">味わい</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {TASTE_FILTERS.map((f) => (
+                      <FilterPill key={f.key} label={f.label} active={tasteFilter === f.key} onClick={() => setTasteFilter(f.key)} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* 件数表示 */}
+              <p className="text-xs text-gray-500 mb-4">
+                {filteredCocktails.length} 件のカクテル
+              </p>
+
               <motion.div
                 className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
+                key={`${baseFilter}-${techniqueFilter}-${tasteFilter}-${searchQuery}`}
               >
-                {availableCocktails.map((cocktail) => {
+                {filteredCocktails.map((cocktail) => {
                   const recipe = recipeMap.get(cocktail.id)!;
-                  const isSelected = selectedCocktailId === cocktail.id;
                   const key = `${cocktail.id}-select`;
                   const bestScore = progress.bestScores[key] || progress.bestScores[cocktail.id];
 
                   return (
                     <motion.div key={cocktail.id} variants={itemVariants}>
                       <motion.button
-                        onClick={() => setSelectedCocktailId(isSelected ? null : cocktail.id)}
-                        className={`w-full text-left glass-card p-4 sm:p-5 transition-all duration-300 relative overflow-hidden cursor-pointer ${
-                          isSelected ? 'ring-1 ring-accent-gold/50' : ''
-                        }`}
+                        onClick={() => navigate(`/game/play?mode=select&cocktail=${cocktail.id}`)}
+                        className="w-full text-left glass-card p-4 sm:p-5 transition-all duration-300 relative overflow-hidden cursor-pointer"
                         whileHover={{ scale: 1.03, boxShadow: '0 0 20px rgba(201,169,110,0.1)' }}
                         whileTap={{ scale: 0.97 }}
-                        style={isSelected ? { boxShadow: '0 0 20px rgba(201,169,110,0.15)' } : undefined}
                       >
                         <div className="absolute top-0 right-0 w-16 h-16 rounded-full blur-2xl opacity-20" style={{ background: cocktail.color }} />
 
@@ -252,7 +348,6 @@ export default function GameTopPage() {
                             <span className={`text-[10px] sm:text-xs px-2 py-0.5 rounded border ${techniqueBadgeColors[recipe.primaryTechnique] || 'bg-white/10 text-text-secondary border-white/20'}`}>
                               {techniqueLabels[recipe.primaryTechnique]}
                             </span>
-                            <DifficultyStars level={recipe.difficulty} />
                           </div>
 
                           {bestScore && (
@@ -262,52 +357,23 @@ export default function GameTopPage() {
                           )}
                         </div>
 
-                        {isSelected && (
-                          <motion.div
-                            className="absolute top-2 right-2 w-5 h-5 rounded-full bg-accent-gold/80 flex items-center justify-center"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ type: 'spring', stiffness: 500, damping: 25 }}
-                          >
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                              <path d="M2.5 6L5 8.5L9.5 3.5" stroke="#0d1a12" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          </motion.div>
-                        )}
                       </motion.button>
                     </motion.div>
                   );
                 })}
               </motion.div>
+
+              {filteredCocktails.length === 0 && (
+                <div className="text-center py-12 text-gray-500">
+                  <Search size={40} className="mx-auto mb-3 opacity-40" />
+                  <p>条件に一致するカクテルが見つかりません</p>
+                </div>
+              )}
             </motion.section>
           )}
         </AnimatePresence>
 
-        {/* Start button (select mode only) */}
-        <AnimatePresence>
-          {selectedMode === 'select' && selectedCocktailId && (
-            <motion.div
-              className="flex justify-center mb-10"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            >
-              <motion.button
-                onClick={handleStart}
-                className="flex items-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded bg-gradient-to-r from-accent-gold/90 to-accent-gold text-bar-dark font-bold text-base sm:text-lg tracking-wide cursor-pointer"
-                style={{ fontFamily: "'Noto Serif JP', serif" }}
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(201,169,110,0.35)' }}
-                whileTap={{ scale: 0.96 }}
-              >
-                <Play size={20} fill="#0d1a12" />
-                ゲーム開始
-              </motion.button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Stats */}
+{/* Stats */}
         <motion.section
           className="glass-card p-6 sm:p-8"
           initial={{ opacity: 0, y: 20 }}

@@ -12,13 +12,21 @@ import {
   X,
 } from 'lucide-react';
 
-const navItems = [
+const cocktailNavItems = [
   { path: '/', label: 'ホーム', icon: Home },
   { path: '/encyclopedia', label: '図鑑', icon: BookOpen },
   { path: '/quiz', label: 'クイズ', icon: HelpCircle },
   { path: '/flashcards', label: '暗記カード', icon: Layers },
   { path: '/classification', label: '分類', icon: GitBranch },
   { path: '/game', label: 'ゲーム', icon: Gamepad2 },
+];
+
+const whiskyNavItems = [
+  { path: '/whisky', label: 'ホーム', icon: Home },
+  { path: '/whisky/encyclopedia', label: '図鑑', icon: BookOpen },
+  { path: '/whisky/quiz', label: 'クイズ', icon: HelpCircle },
+  { path: '/whisky/flashcards', label: '暗記カード', icon: Layers },
+  { path: '/whisky/classification', label: '分類', icon: GitBranch },
 ];
 
 // 背景に浮かぶ微細な光の粒子
@@ -55,6 +63,8 @@ function Particles() {
 export default function Layout() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isWhiskySection = location.pathname.startsWith('/whisky');
+  const navItems = isWhiskySection ? whiskyNavItems : cocktailNavItems;
 
   return (
     <div className="min-h-screen bg-bar-dark relative">
@@ -65,26 +75,48 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* ロゴ */}
-            <Link to="/" className="flex items-center gap-2 no-underline">
-              <motion.span
-                className="text-2xl"
-                animate={{ rotate: [0, -5, 5, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 6 }}
-              >
-                🍸
-              </motion.span>
-              <span className="text-lg sm:text-xl font-bold gradient-text" style={{ fontFamily: "'Cinzel', serif" }}>
-                Cocktail Book
-              </span>
-            </Link>
+            <div className="flex items-center">
+              <Link to={isWhiskySection ? '/whisky' : '/'} className="flex items-center gap-2 no-underline">
+                <motion.span
+                  className="text-2xl"
+                  animate={{ rotate: [0, -5, 5, -5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, repeatDelay: 6 }}
+                >
+                  {isWhiskySection ? '🥃' : '🍸'}
+                </motion.span>
+                <span className="text-lg sm:text-xl font-bold gradient-text" style={{ fontFamily: "'Cinzel', serif" }}>
+                  {isWhiskySection ? 'Whisky Book' : 'Cocktail Book'}
+                </span>
+              </Link>
+
+              {/* セクション切替 */}
+              <div className="flex items-center gap-1 ml-4">
+                <Link
+                  to="/"
+                  className={`px-2 py-1 rounded text-xs transition-colors no-underline ${
+                    !isWhiskySection ? 'bg-accent-gold/15 text-accent-gold' : 'text-text-muted hover:text-text-secondary'
+                  }`}
+                >
+                  🍸 Cocktail
+                </Link>
+                <Link
+                  to="/whisky"
+                  className={`px-2 py-1 rounded text-xs transition-colors no-underline ${
+                    isWhiskySection ? 'bg-accent-gold/15 text-accent-gold' : 'text-text-muted hover:text-text-secondary'
+                  }`}
+                >
+                  🥃 Whisky
+                </Link>
+              </div>
+            </div>
 
             {/* デスクトップナビ */}
             <nav className="hidden md:flex items-center gap-1">
               {navItems.map((item) => {
                 const isActive =
-                  item.path === '/'
-                    ? location.pathname === '/'
-                    : location.pathname.startsWith(item.path);
+                  item.path === '/' ? location.pathname === '/' :
+                  item.path === '/whisky' ? location.pathname === '/whisky' :
+                  location.pathname.startsWith(item.path);
                 const Icon = item.icon;
                 return (
                   <Link
@@ -159,12 +191,33 @@ export default function Layout() {
                   <X size={20} />
                 </button>
               </div>
+              {/* モバイルセクション切替 */}
+              <div className="px-4 pt-4 pb-2 flex items-center gap-1">
+                <Link
+                  to="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-3 py-1.5 rounded text-xs transition-colors no-underline ${
+                    !isWhiskySection ? 'bg-accent-gold/15 text-accent-gold' : 'text-text-muted hover:text-text-secondary'
+                  }`}
+                >
+                  🍸 Cocktail
+                </Link>
+                <Link
+                  to="/whisky"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-3 py-1.5 rounded text-xs transition-colors no-underline ${
+                    isWhiskySection ? 'bg-accent-gold/15 text-accent-gold' : 'text-text-muted hover:text-text-secondary'
+                  }`}
+                >
+                  🥃 Whisky
+                </Link>
+              </div>
               <div className="p-4 flex flex-col gap-2">
                 {navItems.map((item, index) => {
                   const isActive =
-                    item.path === '/'
-                      ? location.pathname === '/'
-                      : location.pathname.startsWith(item.path);
+                    item.path === '/' ? location.pathname === '/' :
+                    item.path === '/whisky' ? location.pathname === '/whisky' :
+                    location.pathname.startsWith(item.path);
                   const Icon = item.icon;
                   return (
                     <motion.div
@@ -206,7 +259,7 @@ export default function Layout() {
       {/* フッター */}
       <footer className="relative z-10 border-t border-glass-border py-8 mt-16">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm text-text-muted">
-          <p>&copy; 2026 Cocktail Book</p>
+          <p>&copy; 2026 Cocktail &amp; Whisky Book</p>
         </div>
       </footer>
     </div>

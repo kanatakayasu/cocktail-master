@@ -7,7 +7,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-gin-tonic',
     cocktailId: 'gin-tonic',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -27,7 +26,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-screwdriver',
     cocktailId: 'screwdriver',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -47,7 +45,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-cuba-libre',
     cocktailId: 'cuba-libre',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -68,7 +65,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-tequila-sunrise',
     cocktailId: 'tequila-sunrise',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -88,7 +84,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-campari-soda',
     cocktailId: 'campari-soda',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -108,7 +103,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-martini',
     cocktailId: 'martini',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'stir',
     requiredGlassId: 'cocktail-glass',
@@ -129,7 +123,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-negroni',
     cocktailId: 'negroni',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'stir',
     requiredGlassId: 'old-fashioned-glass',
@@ -151,7 +144,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-manhattan',
     cocktailId: 'manhattan',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'stir',
     requiredGlassId: 'cocktail-glass',
@@ -173,7 +165,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-gimlet',
     cocktailId: 'gimlet',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -193,7 +184,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-daiquiri',
     cocktailId: 'daiquiri',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -214,7 +204,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-margarita',
     cocktailId: 'margarita',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -235,7 +224,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-sidecar',
     cocktailId: 'sidecar',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -256,7 +244,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-cosmopolitan',
     cocktailId: 'cosmopolitan',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -279,7 +266,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-pina-colada',
     cocktailId: 'pina-colada',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'blend',
     requiredGlassId: 'tumbler',
@@ -301,7 +287,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-gin-buck',
     cocktailId: 'gin-buck',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -322,7 +307,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-moscow-mule',
     cocktailId: 'moscow-mule',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'copper-mug',
@@ -343,7 +327,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-black-russian',
     cocktailId: 'black-russian',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'old-fashioned-glass',
@@ -362,7 +345,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-kahlua-milk',
     cocktailId: 'kahlua-milk',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'old-fashioned-glass',
@@ -381,7 +363,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-kir',
     cocktailId: 'kir',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'wine-glass',
@@ -399,7 +380,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-kir-royale',
     cocktailId: 'kir-royale',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'champagne-flute',
@@ -417,7 +397,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-mimosa',
     cocktailId: 'mimosa',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'champagne-flute',
@@ -435,7 +414,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-bellini',
     cocktailId: 'bellini',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'champagne-flute',
@@ -453,7 +431,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-shandy-gaff',
     cocktailId: 'shandy-gaff',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'pilsner-glass',
@@ -471,7 +448,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-red-eye',
     cocktailId: 'red-eye',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'pilsner-glass',
@@ -489,7 +465,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-salty-dog',
     cocktailId: 'salty-dog',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -509,7 +484,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-bloody-mary',
     cocktailId: 'bloody-mary',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -532,7 +506,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-paloma',
     cocktailId: 'paloma',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -554,7 +527,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-mexican-mule',
     cocktailId: 'mexican-mule',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'copper-mug',
@@ -575,7 +547,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-old-fashioned',
     cocktailId: 'old-fashioned',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'old-fashioned-glass',
@@ -597,7 +568,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-mint-julep',
     cocktailId: 'mint-julep',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -618,7 +588,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-godfather',
     cocktailId: 'godfather',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'old-fashioned-glass',
@@ -637,7 +606,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-rusty-nail',
     cocktailId: 'rusty-nail',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'old-fashioned-glass',
@@ -657,7 +625,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-horses-neck',
     cocktailId: 'horses-neck',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -677,7 +644,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-nikolaschka',
     cocktailId: 'nikolaschka',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'cordial-glass',
@@ -695,7 +661,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-aperol-spritz',
     cocktailId: 'aperol-spritz',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'wine-glass',
@@ -716,7 +681,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-mojito',
     cocktailId: 'mojito',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'tumbler',
@@ -739,7 +703,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-caipirinha',
     cocktailId: 'caipirinha',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'old-fashioned-glass',
@@ -760,7 +723,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-irish-coffee',
     cocktailId: 'irish-coffee',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'irish-coffee-glass',
@@ -780,7 +742,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-long-island-iced-tea',
     cocktailId: 'long-island-iced-tea',
-    difficulty: 3,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'collins-glass',
@@ -805,7 +766,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-b-52',
     cocktailId: 'b-52',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'shot-glass',
@@ -824,7 +784,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-gin-fizz',
     cocktailId: 'gin-fizz',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'tumbler',
@@ -848,7 +807,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-white-lady',
     cocktailId: 'white-lady',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -869,7 +827,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-singapore-sling',
     cocktailId: 'singapore-sling',
-    difficulty: 3,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'collins-glass',
@@ -892,7 +849,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-tom-collins',
     cocktailId: 'tom-collins',
-    difficulty: 1,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'build',
     requiredGlassId: 'collins-glass',
@@ -915,7 +871,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-alaska',
     cocktailId: 'alaska',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -936,7 +891,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-espresso-martini',
     cocktailId: 'espresso-martini',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -957,7 +911,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-balalaika',
     cocktailId: 'balalaika',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -978,7 +931,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-xyz',
     cocktailId: 'xyz',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -999,7 +951,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-mai-tai',
     cocktailId: 'mai-tai',
-    difficulty: 3,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'old-fashioned-glass',
@@ -1024,7 +975,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-blue-hawaii',
     cocktailId: 'blue-hawaii',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'goblet',
@@ -1047,7 +997,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-whiskey-sour',
     cocktailId: 'whiskey-sour',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'sour-glass',
@@ -1070,7 +1019,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-new-york',
     cocktailId: 'new-york',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -1093,7 +1041,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-alexander',
     cocktailId: 'alexander',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -1115,7 +1062,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-jack-rose',
     cocktailId: 'jack-rose',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -1136,7 +1082,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-grasshopper',
     cocktailId: 'grasshopper',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'cocktail-glass',
@@ -1157,7 +1102,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-french-75',
     cocktailId: 'french-75',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'champagne-flute',
@@ -1180,7 +1124,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-pisco-sour',
     cocktailId: 'pisco-sour',
-    difficulty: 3,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'sour-glass',
@@ -1202,7 +1145,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-penicillin',
     cocktailId: 'penicillin',
-    difficulty: 3,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'shake',
     requiredGlassId: 'old-fashioned-glass',
@@ -1224,7 +1166,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-sazerac',
     cocktailId: 'sazerac',
-    difficulty: 3,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'stir',
     requiredGlassId: 'old-fashioned-glass',
@@ -1247,7 +1188,6 @@ export const gameRecipes: GameRecipe[] = [
   {
     id: 'game-boulevardier',
     cocktailId: 'boulevardier',
-    difficulty: 2,
     allowedModes: ['select', 'random'],
     primaryTechnique: 'stir',
     requiredGlassId: 'cocktail-glass',

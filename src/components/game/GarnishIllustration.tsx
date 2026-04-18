@@ -421,6 +421,185 @@ export const SugarRimGarnish: FC<GarnishProps> = ({ size = 32, className }) => (
   </svg>
 );
 
+// ─── 12. CoffeeBeansGarnish ─────────────────────
+// コーヒービーンズ（3粒散らばった茶色の楕円）
+export const CoffeeBeansGarnish: FC<GarnishProps> = ({ size = 32, className }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none" className={className}>
+    <defs>
+      <filter id="cb-sh">
+        <feDropShadow dx="0.3" dy="0.5" stdDeviation="0.6" floodOpacity={0.15} />
+      </filter>
+    </defs>
+    {/* コーヒー豆1（左上） */}
+    <ellipse cx="10" cy="11" rx="4" ry="2.8" fill="#6b3a1f" stroke="#4a2810" strokeWidth={0.6} transform="rotate(-25 10 11)" filter="url(#cb-sh)" />
+    <path d="M8 9.5 C9 10.5 11 10.5 12 9.5" fill="none" stroke="#4a2810" strokeWidth={0.5} transform="rotate(-25 10 11)" />
+    <ellipse cx="9" cy="10" rx="1.2" ry="0.8" fill="#8b5a3a" fillOpacity={0.4} transform="rotate(-25 9 10)" />
+    {/* コーヒー豆2（右） */}
+    <ellipse cx="22" cy="14" rx="4" ry="2.8" fill="#7a4428" stroke="#4a2810" strokeWidth={0.6} transform="rotate(15 22 14)" filter="url(#cb-sh)" />
+    <path d="M20 12.5 C21 13.5 23 13.5 24 12.5" fill="none" stroke="#4a2810" strokeWidth={0.5} transform="rotate(15 22 14)" />
+    <ellipse cx="21" cy="13" rx="1.2" ry="0.8" fill="#9a6a4a" fillOpacity={0.4} transform="rotate(15 21 13)" />
+    {/* コーヒー豆3（中央下） */}
+    <ellipse cx="14" cy="22" rx="4" ry="2.8" fill="#5c3018" stroke="#4a2810" strokeWidth={0.6} transform="rotate(-5 14 22)" filter="url(#cb-sh)" />
+    <path d="M12 20.5 C13 21.5 15 21.5 16 20.5" fill="none" stroke="#4a2810" strokeWidth={0.5} transform="rotate(-5 14 22)" />
+    <ellipse cx="13" cy="21" rx="1.2" ry="0.8" fill="#8b5a3a" fillOpacity={0.4} transform="rotate(-5 13 21)" />
+  </svg>
+);
+
+// ─── 13. CeleryGarnish ─────────────────────────
+// セロリスティック（縦長の緑の茎、上部に葉）
+export const CeleryGarnish: FC<GarnishProps> = ({ size = 32, className }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none" className={className}>
+    <defs>
+      <filter id="cl-sh">
+        <feDropShadow dx="0.3" dy="0.5" stdDeviation="0.6" floodOpacity={0.15} />
+      </filter>
+    </defs>
+    {/* セロリの茎 */}
+    <rect x="14" y="8" width="4" height="22" rx="1.5" fill="#8bc34a" stroke="#5a8a20" strokeWidth={0.7} filter="url(#cl-sh)" />
+    {/* 茎の溝（縦線） */}
+    <line x1="15.5" y1="9" x2="15.5" y2="29" stroke="#6a9a30" strokeWidth={0.4} strokeOpacity={0.5} />
+    <line x1="16.8" y1="9" x2="16.8" y2="29" stroke="#6a9a30" strokeWidth={0.3} strokeOpacity={0.4} />
+    {/* ハイライト */}
+    <rect x="14.5" y="10" width="1" height="18" rx="0.5" fill="#a8d868" fillOpacity={0.35} />
+    {/* 葉1（左） */}
+    <path
+      d="M15 8 C12 4 8 2 6 1 C8 3 11 5 14 7"
+      fill="#5cb838"
+      stroke="#3a8020"
+      strokeWidth={0.5}
+      strokeLinejoin="round"
+    />
+    {/* 葉2（右） */}
+    <path
+      d="M17 8 C20 4 24 2 26 1 C24 3 21 5 18 7"
+      fill="#68c848"
+      stroke="#3a8020"
+      strokeWidth={0.5}
+      strokeLinejoin="round"
+    />
+    {/* 葉3（中央） */}
+    <path
+      d="M16 8 C16 4 16 2 16 0 C16 2 16 5 16 7"
+      fill="#7ed858"
+      stroke="#3a8020"
+      strokeWidth={0.4}
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+// ─── 14. OrangePeelGarnish ─────────────────────
+// オレンジピールツイスト（渦巻き状、オレンジ色）
+export const OrangePeelGarnish: FC<GarnishProps> = ({ size = 32, className }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none" className={className}>
+    <defs>
+      <filter id="op-sh">
+        <feDropShadow dx="0.3" dy="0.5" stdDeviation="0.6" floodOpacity={0.15} />
+      </filter>
+    </defs>
+    {/* ツイストした皮のカール */}
+    <path
+      d="M10 6 C6 10 8 16 14 14 C20 12 16 20 12 22 C8 24 10 30 18 28 C26 26 28 18 24 12 C20 6 14 4 10 6 Z"
+      fill="#f4922a"
+      stroke="#cc6a10"
+      strokeWidth={0.8}
+      strokeLinejoin="round"
+      filter="url(#op-sh)"
+    />
+    {/* 内側（白い部分） */}
+    <path
+      d="M12 8 C9 11 10 15 15 14 C19 13 17 19 13 21 C10 23 12 28 18 26 C24 24 26 18 22 13 C18 8 14 6 12 8 Z"
+      fill="#ffe0b0"
+      fillOpacity={0.5}
+    />
+    {/* 反りのハイライト */}
+    <path
+      d="M11 8 C10 10 11 12 13 11"
+      fill="none"
+      stroke="#f8b060"
+      strokeWidth={0.8}
+      strokeOpacity={0.6}
+    />
+    {/* エッセンスの飛沫（点線風） */}
+    <circle cx="7" cy="14" r="0.6" fill="#f8c878" fillOpacity={0.4} />
+    <circle cx="9" cy="26" r="0.5" fill="#f8c878" fillOpacity={0.3} />
+    <circle cx="24" cy="8" r="0.5" fill="#f8c878" fillOpacity={0.3} />
+  </svg>
+);
+
+// ─── 15. NutmegGarnish ─────────────────────────
+// ナツメグ（すりおろしが振りかけられる様子、小さな茶色の粒が落ちる）
+export const NutmegGarnish: FC<GarnishProps> = ({ size = 32, className }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none" className={className}>
+    <defs>
+      <filter id="nm-sh">
+        <feDropShadow dx="0.3" dy="0.5" stdDeviation="0.6" floodOpacity={0.15} />
+      </filter>
+    </defs>
+    {/* ナツメグの実（上部） */}
+    <ellipse cx="16" cy="8" rx="5" ry="4" fill="#8b5a3a" stroke="#6b3a1f" strokeWidth={0.7} filter="url(#nm-sh)" />
+    {/* 実のハイライト */}
+    <ellipse cx="14" cy="7" rx="1.8" ry="1.2" fill="#a07050" fillOpacity={0.4} />
+    {/* 実の模様（縦線） */}
+    <path d="M14 4.5 C14 8 14 11.5 14 12" fill="none" stroke="#6b3a1f" strokeWidth={0.3} strokeOpacity={0.5} />
+    <path d="M18 4.5 C18 8 18 11.5 18 12" fill="none" stroke="#6b3a1f" strokeWidth={0.3} strokeOpacity={0.5} />
+    {/* すりおろしの粒（散らばって落ちる） */}
+    <circle cx="12" cy="15" r="0.8" fill="#8b5a3a" fillOpacity={0.7} />
+    <circle cx="16" cy="14" r="0.6" fill="#7a4428" fillOpacity={0.6} />
+    <circle cx="20" cy="15.5" r="0.7" fill="#6b3a1f" fillOpacity={0.7} />
+    <circle cx="14" cy="18" r="0.5" fill="#8b5a3a" fillOpacity={0.55} />
+    <circle cx="18" cy="17" r="0.7" fill="#7a4428" fillOpacity={0.6} />
+    <circle cx="10" cy="19" r="0.4" fill="#6b3a1f" fillOpacity={0.45} />
+    <circle cx="22" cy="18.5" r="0.5" fill="#8b5a3a" fillOpacity={0.5} />
+    <circle cx="13" cy="21" r="0.6" fill="#7a4428" fillOpacity={0.45} />
+    <circle cx="17" cy="20.5" r="0.4" fill="#6b3a1f" fillOpacity={0.5} />
+    <circle cx="20" cy="22" r="0.5" fill="#8b5a3a" fillOpacity={0.4} />
+    <circle cx="15" cy="24" r="0.4" fill="#7a4428" fillOpacity={0.35} />
+    <circle cx="11" cy="23" r="0.3" fill="#6b3a1f" fillOpacity={0.35} />
+    <circle cx="19" cy="25" r="0.3" fill="#8b5a3a" fillOpacity={0.3} />
+    <circle cx="16" cy="27" r="0.3" fill="#7a4428" fillOpacity={0.25} />
+  </svg>
+);
+
+// ─── 16. LemonPeelGarnish ─────────────────────
+// レモンピールツイスト（渦巻き状、黄色）
+export const LemonPeelGarnish: FC<GarnishProps> = ({ size = 32, className }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none" className={className}>
+    <defs>
+      <filter id="lep-sh">
+        <feDropShadow dx="0.3" dy="0.5" stdDeviation="0.6" floodOpacity={0.15} />
+      </filter>
+    </defs>
+    {/* ツイストした皮のカール */}
+    <path
+      d="M10 6 C6 10 8 16 14 14 C20 12 16 20 12 22 C8 24 10 30 18 28 C26 26 28 18 24 12 C20 6 14 4 10 6 Z"
+      fill="#f7e84d"
+      stroke="#d4c030"
+      strokeWidth={0.8}
+      strokeLinejoin="round"
+      filter="url(#lep-sh)"
+    />
+    {/* 内側（白い部分） */}
+    <path
+      d="M12 8 C9 11 10 15 15 14 C19 13 17 19 13 21 C10 23 12 28 18 26 C24 24 26 18 22 13 C18 8 14 6 12 8 Z"
+      fill="#fff9e0"
+      fillOpacity={0.5}
+    />
+    {/* 反りのハイライト */}
+    <path
+      d="M11 8 C10 10 11 12 13 11"
+      fill="none"
+      stroke="#f8e878"
+      strokeWidth={0.8}
+      strokeOpacity={0.6}
+    />
+    {/* エッセンスの飛沫（点線風） */}
+    <circle cx="7" cy="14" r="0.6" fill="#f8e878" fillOpacity={0.4} />
+    <circle cx="9" cy="26" r="0.5" fill="#f8e878" fillOpacity={0.3} />
+    <circle cx="24" cy="8" r="0.5" fill="#f8e878" fillOpacity={0.3} />
+  </svg>
+);
+
 // ─── マッピングヘルパー ─────────────────────────
 
 /** ガーニッシュIDに対応するコンポーネントを返す */
@@ -441,6 +620,13 @@ const garnishMap: Record<string, FC<GarnishProps>> = {
   salt: SaltRimGarnish,
   'sugar-rim': SugarRimGarnish,
   sugar: SugarRimGarnish,
+  'coffee-beans': CoffeeBeansGarnish,
+  celery: CeleryGarnish,
+  'orange-peel': OrangePeelGarnish,
+  nutmeg: NutmegGarnish,
+  'lemon-peel': LemonPeelGarnish,
+  'lemon-wheel': LemonSliceGarnish,
+  'mint-leaves': MintGarnish,
   // 日本語名マッピング
   オリーブ: OliveGarnish,
   ライムウェッジ: LimeWedgeGarnish,
@@ -458,6 +644,13 @@ const garnishMap: Record<string, FC<GarnishProps>> = {
   塩: SaltRimGarnish,
   シュガーリム: SugarRimGarnish,
   砂糖: SugarRimGarnish,
+  コーヒービーンズ: CoffeeBeansGarnish,
+  セロリスティック: CeleryGarnish,
+  セロリ: CeleryGarnish,
+  オレンジピール: OrangePeelGarnish,
+  ナツメグ: NutmegGarnish,
+  レモンピール: LemonPeelGarnish,
+  レモン輪切り: LemonSliceGarnish,
 };
 
 export function getGarnishComponent(garnishId: string): FC<GarnishProps> | null {

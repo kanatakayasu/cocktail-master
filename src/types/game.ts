@@ -17,7 +17,6 @@ export type GameActionType =
 export type ShelfArea = 'liquorShelf' | 'fridge' | 'glassShelf' | 'toolShelf';
 export type GameArea = ShelfArea | 'counter';
 export type GameMode = 'select' | 'random';
-export type GameDifficulty = 1 | 2 | 3;
 export type TechniqueType = 'build' | 'stir' | 'shake' | 'blend';
 export type ContainerId = 'glass' | 'mixingGlass' | 'shaker' | 'blender';
 
@@ -63,7 +62,6 @@ export interface CheckpointResult {
 export interface GameRecipe {
   id: string;
   cocktailId: string;
-  difficulty: GameDifficulty;
   allowedModes: GameMode[];
   primaryTechnique: TechniqueType;
   requiredGlassId: string;

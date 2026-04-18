@@ -36,9 +36,26 @@ export function scoreGame(
   }));
 
   const maxScore = checkpointResults.reduce((sum, cr) => sum + cr.checkpoint.points, 0);
-  const totalScore = checkpointResults
+  const earnedScore = checkpointResults
     .filter(cr => cr.passed)
     .reduce((sum, cr) => sum + cr.checkpoint.points, 0);
+
+  // 不要な材料のペナルティ: チェックポイントで参照されていない材料を検出
+  const validIngredientIds = new Set<string>();
+  for (const cp of recipe.checkpoints) {
+    if (cp.ingredientId) validIngredientIds.add(cp.ingredientId);
+    if (cp.garnishId) validIngredientIds.add(cp.garnishId);
+  }
+
+  const extraIngredientCount = playerActions.filter(
+    a =>
+      (a.actionType === 'addIngredient' || a.actionType === 'topUp') &&
+      a.targetId != null &&
+      !validIngredientIds.has(a.targetId)
+  ).length;
+
+  const penalty = extraIngredientCount * 5;
+  const totalScore = Math.max(0, earnedScore - penalty);
 
   const rank = getRank(totalScore, maxScore);
 
