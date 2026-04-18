@@ -45,6 +45,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['政府公認第1号蒸留所', 'フルーティでバランスが良い', 'ジョージ・スミスが創業'],
     color: '#DAA520',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/The_Glenlivet_distillery.jpg/800px-The_Glenlivet_distillery.jpg',
   },
   {
     id: 'glenfarclas',
@@ -59,6 +60,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['家族経営6世代', 'ガス直火焚き', 'シェリー樽熟成'],
     color: '#A0522D',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Copper_still_at_Glenfarclas_distillery_-_geograph.org.uk_-_3237457.jpg/800px-Copper_still_at_Glenfarclas_distillery_-_geograph.org.uk_-_3237457.jpg',
   },
   {
     id: 'strathisla',
@@ -73,6 +75,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['シーバスリーガルのキーモルト', 'スペイサイド最古級', '美しい蒸留所建築'],
     color: '#B8860B',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Strathisla_Distillery_1.jpg/800px-Strathisla_Distillery_1.jpg',
   },
   {
     id: 'cardhu',
@@ -87,6 +90,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['ジョニーウォーカーのキーモルト', '女性が経営発展に貢献', 'スムーズで甘い味わい'],
     color: '#CD853F',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Cardhu.jpg/800px-Cardhu.jpg',
   },
   // ===== スコットランド - ハイランド =====
   {
@@ -102,6 +106,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['スコットランド最長のネック', 'ウッドフィニッシュの先駆者', '軽やかでエレガント'],
     color: '#FF8C00',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Glenmorangie_Distillery_-_panoramio.jpg/800px-Glenmorangie_Distillery_-_panoramio.jpg',
   },
   {
     id: 'clynelish',
@@ -116,6 +121,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['ジョニーウォーカーのキーモルト', '塩気とワックス感', '海沿いの蒸留所'],
     color: '#4682B4',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Clynelish_Distillery._-_panoramio.jpg/800px-Clynelish_Distillery._-_panoramio.jpg',
   },
   {
     id: 'dalmore',
@@ -130,6 +136,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['鹿のシンボル', 'リッチでフルボディ', '高級ボトルのリリース'],
     color: '#8B0000',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Dalmore_Distillery_-_geograph.org.uk_-_2089614.jpg/800px-Dalmore_Distillery_-_geograph.org.uk_-_2089614.jpg',
   },
   // ===== スコットランド - アイラ =====
   {
@@ -175,6 +182,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['ヘビリーピーテッド（約55ppm）', '毎年限定ボトルリリース', '複雑でスモーキー'],
     color: '#1C1C1C',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Ardbeg_whiskybrennerei_islay_schottland_16.06.2007.JPG/800px-Ardbeg_whiskybrennerei_islay_schottland_16.06.2007.JPG',
   },
   {
     id: 'lagavulin',
@@ -189,6 +197,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['力強いピーティな味わい', 'アイラ南岸の蒸留所', 'ホワイトホースのキーモルト'],
     color: '#483D8B',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/2019-05-05_Lagavulin_Distillery.jpg/800px-2019-05-05_Lagavulin_Distillery.jpg',
   },
   // ===== スコットランド - ローランド =====
   {
@@ -204,6 +213,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['スコッチ唯一の3回蒸留', '軽やかでクリーン', 'グラスゴー近郊'],
     color: '#90EE90',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Auchentoshan_Distillery_-_panoramio.jpg/800px-Auchentoshan_Distillery_-_panoramio.jpg',
   },
   // ===== スコットランド - キャンベルタウン =====
   {
@@ -219,6 +229,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['100%自家製麦', '全工程自社実施', '2.5回蒸留'],
     color: '#556B2F',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Springbank_Distillery%2C_Campbeltown.jpg/800px-Springbank_Distillery%2C_Campbeltown.jpg',
   },
   // ===== スコットランド - アイランズ =====
   {
@@ -280,6 +291,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['森の蒸留所', '南アルプスの天然水', '爽やかでグリーンな味わい'],
     color: '#228B22',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/160825_Suntory_Hakushu_Distillery_Hokuto_Yamanashi_pref_Japan04s3.jpg/800px-160825_Suntory_Hakushu_Distillery_Hokuto_Yamanashi_pref_Japan04s3.jpg',
   },
   {
     id: 'chita',
@@ -294,6 +306,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['グレーンウイスキー専門', '3種の連続式蒸留機', 'サントリーブレンドの要'],
     color: '#F5DEB3',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Chita_Whisky_Distillery.png',
   },
   {
     id: 'yoichi',
@@ -323,6 +336,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['カフェスチル保有', 'スチーム加熱', '華やかでフルーティ'],
     color: '#4169E1',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Miyagikyo_Distillery_01.jpg/800px-Miyagikyo_Distillery_01.jpg',
   },
   {
     id: 'chichibu',
@@ -337,6 +351,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['肥土伊知郎氏が創業', '世界的に高い評価', '多彩な樽の使用'],
     color: '#DC143C',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Chichibu_Distillery_1.jpg/800px-Chichibu_Distillery_1.jpg',
   },
   {
     id: 'akkeshi',
@@ -365,6 +380,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['富士山の伏流水', 'モルトとグレーン両方製造', 'キリングループ'],
     color: '#87CEEB',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Fuji_Gotemba_distillery05.jpg/800px-Fuji_Gotemba_distillery05.jpg',
   },
   {
     id: 'white-oak',
@@ -394,6 +410,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['全米最古級の蒸留所', '多数の銘柄を製造', 'ケンタッキー州の名門'],
     color: '#8B4513',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Buffalo_Trace_Tower.jpg/800px-Buffalo_Trace_Tower.jpg',
   },
   {
     id: 'jim-beam',
@@ -408,6 +425,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['世界売上No.1バーボン', 'ビーム家7世代', 'ビームサントリー傘下'],
     color: '#FFD700',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Jim_Beam_distillery.jpg/800px-Jim_Beam_distillery.jpg',
   },
   {
     id: 'makers-mark',
@@ -422,6 +440,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['ライ麦の代わりに冬小麦使用', '赤い封蝋が特徴', 'まろやかな味わい'],
     color: '#B22222',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Makers-Mark-Distillery.jpg/800px-Makers-Mark-Distillery.jpg',
   },
   {
     id: 'jack-daniels',
@@ -451,6 +470,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['トウモロコシ使用量が最少', 'スパイシーで力強い', 'ジミー・ラッセルの伝統'],
     color: '#FF4500',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Wild_Turkey_Visitor%27s_Center.jpg/800px-Wild_Turkey_Visitor%27s_Center.jpg',
   },
   {
     id: 'four-roses',
@@ -465,6 +485,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['5種の酵母×2つのマッシュビル', '10種の原酒', '華やかでフローラル'],
     color: '#FF69B4',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Four_roses_destillery.jpg/800px-Four_roses_destillery.jpg',
   },
   // ===== アイルランド =====
   {
@@ -480,6 +501,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['1608年免許（世界最古級）', 'ノンピート麦芽', '3回蒸留'],
     color: '#006400',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bushmills_Whiskey_Distillery_01.jpg/800px-Bushmills_Whiskey_Distillery_01.jpg',
   },
   {
     id: 'midleton',
@@ -494,6 +516,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['世界最大級の蒸留所', 'ジェムソンの製造元', 'シングルポットスチルウイスキー'],
     color: '#228B22',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Midleton_-_Jameson_Distillery_building_-_geograph.org.uk_-_1635185.jpg',
   },
   {
     id: 'teeling',
@@ -508,6 +531,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['ダブリン約125年ぶりの蒸留所', '革新的なカスクフィニッシュ', '2015年オープン'],
     color: '#FFD700',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Teeling_Distillery_Dublin.jpg/800px-Teeling_Distillery_Dublin.jpg',
   },
   {
     id: 'cooley',
@@ -522,6 +546,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['独立系復活の先駆け', 'ピーテッドアイリッシュ（カネマラ）', '1987年設立'],
     color: '#2E8B57',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cooley_Distillery_-_Low_Res.jpg/800px-Cooley_Distillery_-_Low_Res.jpg',
   },
   // ===== カナダ =====
   {
@@ -537,6 +562,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['カナディアンクラブの製造元', 'プレ・ブレンディング製法', '1858年創業'],
     color: '#8B4513',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Hiram_Walker_distilleries.jpg/800px-Hiram_Walker_distilleries.jpg',
   },
   {
     id: 'gimli',
@@ -580,6 +606,7 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['台湾初のウイスキー蒸留所', '亜熱帯気候で急速熟成', '国際品評会で多数受賞'],
     color: '#FF6347',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Kavalan_distillery.jpg/800px-Kavalan_distillery.jpg',
   },
   {
     id: 'amrut',
@@ -594,5 +621,6 @@ export const whiskyDistilleries: WhiskyDistillery[] = [
     features: ['インドのクラフト蒸留所', '高地熟成（標高約920m）', '世界最大のウイスキー消費国'],
     color: '#FF8C00',
     emoji: '🥃',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Amrut_singlemalt_whisky_2013-06-11_18-39.jpg/800px-Amrut_singlemalt_whisky_2013-06-11_18-39.jpg',
   },
 ];

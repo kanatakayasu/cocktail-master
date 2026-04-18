@@ -57,6 +57,7 @@ const PRODUCTION_STEPS = [
     emoji: '⚙️',
     title: '粉砕（ミリング）',
     description: '乾燥させた麦芽をローラーミルで粉砕し、グリスト（粗挽き粉）にする。粗さの配分（ハスク・グリッツ・フラワー）が糖化効率を左右する。粉砕が細かすぎると濾過に時間がかかり、粗すぎると糖分の抽出が不十分になる。',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Grain_mill_at_Jack_Daniel%27s_Distillery.jpg/800px-Grain_mill_at_Jack_Daniel%27s_Distillery.jpg',
   },
   {
     emoji: '🫗',
@@ -86,6 +87,7 @@ const PRODUCTION_STEPS = [
     emoji: '🔄',
     title: 'ブレンド（ヴァッティング）',
     description: 'ブレンデッドウイスキーの場合、マスターブレンダーが数十種類のモルト原酒とグレーン原酒を調合する。シングルモルトでも異なる樽の原酒を組み合わせるヴァッティングにより一貫した味わいを実現する。',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Blended_whisky.jpg',
   },
   {
     emoji: '🍾',
@@ -140,6 +142,7 @@ const DRINKING_METHODS = [
     nameEn: 'Twice Up',
     description: 'ウイスキーと常温の水を1:1で混ぜる飲み方。アルコール度数が20〜30度になり、最も香りが引き立つとされる。ブレンダーがテイスティングする際にもよく用いられるプロフェッショナルな手法。',
     ratio: 'ウイスキー 1 : 水 1',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Glass_of_whisky.jpg',
   },
   {
     emoji: '🚰',
@@ -147,6 +150,7 @@ const DRINKING_METHODS = [
     nameEn: 'Mizuwari',
     description: '日本発祥の飲み方。グラスに氷を入れ、ウイスキーと冷水を1:2〜3の比率で混ぜる。食事と合わせやすい濃度になるのが特徴で、日本の食文化に合った飲み方として世界的にも認知されている。',
     ratio: 'ウイスキー 1 : 水 2〜3',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Nosing_Glass_f%C3%BCr_Whisky.JPG/800px-Nosing_Glass_f%C3%BCr_Whisky.JPG',
   },
   {
     emoji: '🫧',
@@ -162,6 +166,7 @@ const DRINKING_METHODS = [
     nameEn: 'Half Rock',
     description: 'ロックグラスに氷を入れ、ウイスキーと水を1:1で注ぐ飲み方。トワイスアップの氷入り版とも言える。オン・ザ・ロックより柔らかく、水割りより濃い、バランスの良い飲み方。',
     ratio: 'ウイスキー 1 : 水 1 ＋氷',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/A_Glass_of_Whiskey_on_the_Rocks.jpg/800px-A_Glass_of_Whiskey_on_the_Rocks.jpg',
   },
 ];
 
